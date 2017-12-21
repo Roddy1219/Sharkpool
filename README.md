@@ -7,25 +7,19 @@ UNOMP: https://github.com/UNOMP/unified-node-open-mining-portal
 
 _1)_ copy
 	
-	```
 	assets
 	pages
 	index.html
 	key.html
-	```
 	
 in to UNOMP / NOMP website folder.
 
 _2)_ edit libs/website.js
 
-	change
+change
 	
-	```
 	app.use('/static', express.static('website/static'));
-	```
 	
-	to
+to
 	
-	```
 	app.use('/assets', express.static('website/assets'));
-	```
