@@ -14,12 +14,16 @@ _1)_ copy
 	
 in to UNOMP / NOMP website folder.
 
-_2)_ edit libs/website.js
+_2)_ edit **libs/website.js**
 
 change
 	
-	app.use('/static', express.static('website/static'));
+```javascript
+app.use('/static', express.static('website/static'));
+```
 	
 to
 	
-	app.use('/assets', express.static('website/assets'));
+```javascript
+app.use('/assets', express.static('website/assets'));
+```
