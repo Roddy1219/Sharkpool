@@ -19,11 +19,13 @@ in to UNOMP / NOMP website folder.
 _2)_ edit libs/website.js
 
 	change
+	
 	```
 	app.use('/static', express.static('website/static'));
 	```
 	
 	to
+	
 	```
 	app.use('/assets', express.static('website/assets'));
 	```
