@@ -1,0 +1,194 @@
+<div class="container">
+  <div class="card card-cascade narrower">
+
+		<!--Card image-->
+		<div class="view gradient-card-header aqua-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+			<span class="white-text mx-3">Stats</span>
+		</div>
+		<!--/Card image-->
+		<div class="card-body">
+	<div class="card card-cascade narrower">
+
+		<!--Card image-->
+		<div class="view gradient-card-header aqua-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+			<span class="white-text mx-3">Block Overview</span>
+		</div>
+		<!--/Card image-->
+		<div class="card-body">
+			<!-- Nav tabs -->
+			<div class="tabs-wrapper">
+			    <ul class="nav classic-tabs tabs-aqua-gradient" role="tablist">
+						{{ for(var pool in it.stats.pools) { }}
+						<li class="nav-item">
+								<a class="nav-link waves-light {{? pool === 'dash' }}active{{?}}" data-toggle="tab" href="#{{=it.stats.pools[pool].symbol}}" role="tab"><i id="{{=it.stats.pools[pool].symbol}}_marker" style="font-size:2rem; color: #FFF;" class="cc {{=it.stats.pools[pool].symbol}}" aria-hidden="true"></i><br> {{=pool}}</a>
+						</li>
+						{{ } }}
+			    </ul>
+			</div>
+
+			<!-- Tab panels -->
+			<div class="tab-content card">
+					{{ for(var pool in it.stats.pools) { }}
+			    <!--Panel 1-->
+			    <div class="tab-pane fade in {{? pool === 'dash' }}show active{{?}}" id="{{=it.stats.pools[pool].symbol}}" role="tabpanel">
+						<!--Table-->
+						<table class="table">
+
+						    <!--Table head-->
+						    <thead class="aqua-gradient">
+						        <tr class="text-white">
+                      <th>Valid Shares</th>
+                      <th>Invalid Shares (Rate %)</th>
+                      <th>Total Blocks</th>
+						        </tr>
+						    </thead>
+						    <!--Table head-->
+
+						    <!--Table body-->
+						    <tbody>
+                  {{ for(var pool in it.stats.pools) { }}
+                    <tr>
+                      <td>{{=it.stats.pools[pool].poolStats.validShares}}</td>
+                      <td>{{=it.stats.pools[pool].poolStats.invalidShares}} ({{=it.stats.pools[pool].poolStats.invalidRate}}%)</td>
+                      <td>{{=it.stats.pools[pool].poolStats.validBlocks}}</td>
+                    </tr>
+                  {{ } }}
+						    </tbody>
+						    <!--Table body-->
+						</table>
+						<!--Table-->
+			    </div>
+			    <!--/.Panel 1-->
+					{{ } }}
+			</div>
+		</div>
+	</div>
+  <br>
+  <div class="card card-cascade narrower">
+
+		<!--Card image-->
+		<div class="view gradient-card-header aqua-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+			<span class="white-text mx-3">Blocks</span>
+		</div>
+		<!--/Card image-->
+		<div class="card-body">
+			<!-- Nav tabs -->
+			<div class="tabs-wrapper">
+			    <ul class="nav classic-tabs tabs-aqua-gradient" role="tablist">
+						{{ for(var pool in it.stats.pools) { }}
+						<li class="nav-item">
+								<a class="nav-link waves-light {{? pool === 'dash' }}active{{?}}" data-toggle="tab" href="#{{=it.stats.pools[pool].symbol}}" role="tab"><i id="{{=it.stats.pools[pool].symbol}}_markerr" style="font-size:2rem; color: #FFF;" class="cc {{=it.stats.pools[pool].symbol}}" aria-hidden="true"></i><br> {{=pool}}</a>
+						</li>
+						{{ } }}
+			    </ul>
+			</div>
+
+			<!-- Tab panels -->
+			<div class="tab-content card">
+					{{ for(var pool in it.stats.pools) { }}
+			    <!--Panel 1-->
+			    <div class="tab-pane fade in {{? pool === 'dash' }}show active{{?}}" id="{{=it.stats.pools[pool].symbol}}" role="tabpanel">
+						<!--Table-->
+						<table class="table">
+
+						    <!--Table head-->
+						    <thead class="aqua-gradient">
+						        <tr class="text-white">
+                      <th>Pending Blocks</th>
+                      <th>Confirmed Blocks</th>
+                      <th>Orphaned Blocks</th>
+						        </tr>
+						    </thead>
+						    <!--Table head-->
+
+						    <!--Table body-->
+						    <tbody>
+                  {{ for(var pool in it.stats.pools) { }}
+                    <tr>
+                      <td>{{=it.stats.pools[pool].blocks.pending}}</td>
+                      <td>{{=it.stats.pools[pool].blocks.confirmed}}</td>
+                      <td>{{=it.stats.pools[pool].blocks.orphaned}}</td>
+                    </tr>
+                  {{ } }}
+						    </tbody>
+						    <!--Table body-->
+						</table>
+						<!--Table-->
+			    </div>
+			    <!--/.Panel 1-->
+					{{ } }}
+			</div>
+		</div>
+	</div>
+  <br>
+  <div class="card card-cascade narrower">
+
+		<!--Card image-->
+		<div class="view gradient-card-header aqua-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+			<span class="white-text mx-3">Pool Stats</span>
+		</div>
+		<!--/Card image-->
+		<div class="card-body">
+			<!-- Nav tabs -->
+			<div class="tabs-wrapper">
+			    <ul class="nav classic-tabs tabs-aqua-gradient" role="tablist">
+						{{ for(var pool in it.stats.pools) { }}
+						<li class="nav-item">
+								<a class="nav-link waves-light {{? pool === 'dash' }}active{{?}}" data-toggle="tab" href="#{{=it.stats.pools[pool].symbol}}" role="tab"><i id="{{=it.stats.pools[pool].symbol}}_markerrr" style="font-size:2rem; color: #FFF;" class="cc {{=it.stats.pools[pool].symbol}}" aria-hidden="true"></i><br> {{=pool}}</a>
+						</li>
+						{{ } }}
+			    </ul>
+			</div>
+
+			<!-- Tab panels -->
+			<div class="tab-content card">
+					{{ for(var pool in it.stats.pools) { }}
+			    <!--Panel 1-->
+			    <div class="tab-pane fade in {{? pool === 'dash' }}show active{{?}}" id="{{=it.stats.pools[pool].symbol}}" role="tabpanel">
+						<!--Table-->
+						<table class="table">
+
+						    <!--Table head-->
+						    <thead class="aqua-gradient">
+						        <tr class="text-white">
+                      <th>Algo</th>
+                      <th>Workers</th>
+                      <th>Valid Shares</th>
+                      <th>Invalid Shares</th>
+                      <th>Total Blocks</th>
+                      <th>Pending</th>
+                      <th>Confirmed</th>
+                      <th>Orphaned</th>
+                      <th>Hashrate</th>
+						        </tr>
+						    </thead>
+						    <!--Table head-->
+
+						    <!--Table body-->
+						    <tbody>
+                  {{ for(var pool in it.stats.pools) { }}
+                    <tr>
+                      <td>{{=it.stats.pools[pool].algorithm}}</td>
+                      <td>{{=Object.keys(it.stats.pools[pool].workers).length}}</td>
+                      <td>{{=it.stats.pools[pool].poolStats.validShares}}</td>
+                      <td>{{=it.stats.pools[pool].poolStats.invalidShares}}</td>
+                      <td>{{=it.stats.pools[pool].poolStats.validBlocks}}</td>
+                      <td>{{=it.stats.pools[pool].blocks.pending}}</td>
+                      <td>{{=it.stats.pools[pool].blocks.confirmed}}</td>
+                      <td>{{=it.stats.pools[pool].blocks.orphaned}}</td>
+                      <td>{{=it.stats.pools[pool].hashrateString}}</td>
+                    </tr>
+                  {{ } }}
+						    </tbody>
+						    <!--Table body-->
+						</table>
+						<!--Table-->
+			    </div>
+			    <!--/.Panel 1-->
+					{{ } }}
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,114 @@
+<div class="container">
+	<div class="card card-cascade narrower">
+
+		<!--Card image-->
+		<div class="view gradient-card-header aqua-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+			<span class="white-text mx-3">Gettings Started</span>
+		</div>
+		<!--/Card image-->
+		<div class="card-body">
+			<!-- Nav tabs -->
+			<div class="tabs-wrapper">
+			    <ul class="nav classic-tabs tabs-aqua-gradient" role="tablist">
+						{{ for(var pool in it.stats.pools) { }}
+						<li class="nav-item">
+								<a class="nav-link waves-light {{? pool === 'dash' }}active{{?}}" data-toggle="tab" href="#{{=it.stats.pools[pool].symbol}}" role="tab"><i id="{{=it.stats.pools[pool].symbol}}_marker" style="font-size:2rem; color: #FFF;" class="cc {{=it.stats.pools[pool].symbol}}" aria-hidden="true"></i><br> {{=pool}}</a>
+						</li>
+						{{ } }}
+			    </ul>
+			</div>
+
+			<!-- Tab panels -->
+			<div class="tab-content card">
+					{{ for(var pool in it.stats.pools) { }}
+			    <!--Panel 1-->
+			    <div class="tab-pane fade in {{? pool === 'dash' }}show active{{?}}" id="{{=it.stats.pools[pool].symbol}}" role="tabpanel">
+						<!--Table-->
+						<table class="table">
+
+						    <!--Table head-->
+						    <thead class="aqua-gradient">
+						        <tr class="text-white">
+												<th>Stratum</th>
+						            <th>Port</th>
+						            <th>Diff</th>
+						        </tr>
+						    </thead>
+						    <!--Table head-->
+
+						    <!--Table body-->
+						    <tbody>
+									{{ for (var port in it.poolsConfigs[pool].ports) { }}
+						        <tr>
+												<td>{{=it.portalConfig.website.stratumHost}}</td>
+												<td>{{=port}}</td>
+												<td>{{=it.poolsConfigs[pool].ports[port].diff}}</td>
+						        </tr>
+										{{ } }}
+						    </tbody>
+						    <!--Table body-->
+						</table>
+						<!--Table-->
+			    </div>
+			    <!--/.Panel 1-->
+					{{ } }}
+			</div>
+		</div>
+		<div class="card card-cascade narrower">
+
+			<!--Card image-->
+			<div class="view gradient-card-header aqua-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+				<span class="white-text mx-3">Mining clients</span>
+			</div>
+			<!--/Card image-->
+			<div class="card-body">
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--<div class="row">
+	<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+			<header>
+				<span class="widget-icon"> <i class="fa fa-table"></i> </span>
+				<h2>Getting Started</h2>
+			</header>
+			<div>
+				<div class="jarviswidget-editbox">
+				</div>
+				<div class="widget-body">
+					<div class="table-responsive">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Coin Name</th>
+									<th>Coin Symbol</th>
+									<th>Coin Algorithm</th>
+									<th>Stratum Host</th>
+									<th>Stratum Ports & Diff</th>
+								</tr>
+							</thead>
+							<tbody>
+							{{ for(var pool in it.poolsConfigs) { }}
+							<tr>
+								<td>{{=it.poolsConfigs[pool].coin.name}}</td>
+								<td>{{=it.poolsConfigs[pool].coin.symbol}}</td>
+								<td>{{=it.poolsConfigs[pool].coin.algorithm}}</td>
+								<td>{{=it.portalConfig.website.stratumHost}}</td>
+								<td>
+								{{ for (var port in it.poolsConfigs[pool].ports) { }}
+									Port: {{=port}},
+									Diff: {{=it.poolsConfigs[pool].ports[port].diff}}
+								{{ } }}
+								</td>
+							</tr>
+							{{ } }}
+            						</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+</div>-->

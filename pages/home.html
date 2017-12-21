@@ -1,0 +1,168 @@
+<div class="container">
+	<div class="row">
+		<div class="col-8">
+			<div class="card card-cascade narrower">
+
+				<!--Card image-->
+				<div class="view gradient-card-header aqua-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+					<span class="white-text mx-3">Supported currencies</span>
+				</div>
+				<!--/Card image-->
+						<!--Table-->
+						<table class="table mb-0">
+
+							<!--Table head-->
+							<thead>
+								<tr>
+									<th class="th-lg">Currency</th>
+									<th class="th-lg">Hashrate</th>
+									<th class="th-lg">Workers</th>
+									<th class="th-lg">Rate</th>
+								</tr>
+							</thead>
+							<!--Table head-->
+
+							<!--Table body-->
+							<tbody>
+								{{ for(var pool in it.stats.pools) { }}
+									<tr>
+										<td class=""><i id="{{=it.stats.pools[pool].symbol}}_marker" class="cc {{=it.stats.pools[pool].symbol}}"></i> {{=pool}}</td>
+										<td>{{=it.stats.pools[pool].hashrateString}}/s</td>
+										<td>{{=it.stats.pools[pool].workerCount}}</td>
+										<td class="{{=it.stats.pools[pool].symbol}}_price"><span style="color: #949494; font-size: 14px; font-weight: 300;"> USD</span></td>
+									</tr>
+								{{ } }}
+							</tbody>
+							<!--Table body-->
+						</table>
+						<!--Table-->
+
+					<hr class="my-0">
+			</div>
+		</div>
+		<div class="col-4">
+		<div class="card card-cascade narrower">
+
+			<!--Card image-->
+			<div class="view gradient-card-header aqua-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+				<span class="white-text mx-3">Pool Features</span>
+			</div>
+			<!--/Card image-->
+			<div class="card-body">
+				<div class="card-title"><span class="badge badge-pill orange"><i class="fa fa-btc" aria-hidden="true"></i></span> The most profitable</div>
+				<p class="card-text">and fair RBPPS. True round based payment system, proportional your shares</p>
+				<div class="card-title"><span class="badge badge-pill green"><i class="fa fa-cogs" aria-hidden="true"></i></span> Greatly optimized</div>
+				<p class="card-text">stratum pool engine, the small reject ratio and the best vardiff possible</p>
+				<div class="card-title"><span class="badge badge-pill indigo"><i class="fa fa-money" aria-hidden="true"></i></span> No registration</div>
+				<p class="card-text">required, no transaction fee, no stealing shares, no hidden fees</p>
+			</div>
+		</div>
+	</div>
+	<!--
+		<div class="col-4">
+			<div class="card card-cascade narrower">
+				<div class="view overlay hm-white-slight">
+					<img src="/assets/img/svg/BTC.svg" class="img-fluid mx-auto" alt="Bitcoin">
+					<a>
+						<div class="mask"></div>
+					</a>
+				</div>
+				<div class="card-body">
+					<h5 class="orange-text"><i class="cc BTC"></i> Bitcoin</h5>
+					<h4 class="card-title">Cheat day inspirations</h4>
+					<p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
+					<a class="btn btn-unique">Button</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>-->
+
+<!--<div class="row">
+	<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+			<header>
+				<span class="widget-icon"> <i class="fa fa-table"></i> </span>
+				<h2>Global Stats</h2>
+			</header>
+			<div>
+				<div class="jarviswidget-editbox">
+				</div>
+				<div class="widget-body">
+					<div class="table-responsive">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Algo</th>
+									<th>Miners</th>
+									<th>Hashrate</th>
+								</tr>
+							</thead>
+							<tbody>
+							{{ for(var algo in it.stats.algos) { }}
+							<tr>
+								<td>{{=algo}}</td>
+								<td>{{=it.stats.algos[algo].workers}}</td>
+								<td>{{=it.stats.algos[algo].hashrateString}}</td>
+							</tr>
+							{{ } }}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+                        <header>
+                                <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                                <h2>Pools / Coins</h2>
+                        </header>
+                        <div>
+                                <div class="jarviswidget-editbox">
+                                </div>
+                                <div class="widget-body">
+                                        <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                        <thead>
+                                                                <tr>
+                                                                        <th>Coin</th>
+                                                                        <th>Miners</th>
+                                                                        <th>Hashrate</th>
+                                                                </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        {{ for(var pool in it.stats.pools) { }}
+                                                        <tr>
+                                                                <td>{{=pool}}</td>
+                                                                <td>{{=it.stats.pools[pool].workerCount}}</td>
+                                                                <td>{{=it.stats.pools[pool].hashrateString}}</td>
+                                                        </tr>
+                                                        {{ } }}
+                                                        </tbody>
+                                                </table>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </article>
+    </div>
+</div>
+
+<script>
+    $(function() {
+        statsSource.addEventListener('message', function (e) {
+            var stats = JSON.parse(e.data);
+            for (algo in stats.algos) {
+                $('#statsMiners' + algo).text(stats.algos[algo].workers);
+                $('#statsHashrate' + algo).text(stats.algos[algo].hashrateString);
+            }
+            for (var pool in stats.pools) {
+                $('#statsMiners' + pool).text(stats.pools[pool].workerCount);
+                $('#statsHashrate' + pool).text(stats.pools[pool].hashrateString);
+            }
+        });
+    });
+</script>
+-->

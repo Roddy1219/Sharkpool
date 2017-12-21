@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<!-- meta -->
+		<meta charset="utf-8">
+		<meta name="description" content="Sharkpool w/ Low pool fees & more...!">
+		<meta name="author" content="Sqveeze">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>{{=it.portalConfig.website.siteTitle}}</title>
+    <!-- Font Awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="/assets/css/mdb.min.css" rel="stylesheet">
+		<!-- CSS defining icons (required) -->
+		<link href="/assets/css/cryptocoins.css" rel="stylesheet">
+		<!-- CSS defining icon/coin colors (optional) -->
+		<link href="/assets/css/cryptocoins-colors.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+		<!-- FAVICONS -->
+		<link rel="shortcut icon" href="/static/img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/static/img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="57x57" href="/assets/img/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/assets/img/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/assets/img/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/assets/img/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="/assets/img/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+		<link rel="manifest" href="/assets/img/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/assets/img/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- Specifying a Webpage Icon for Web Clip
+			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+		<link rel="apple-touch-icon" href="/static/img/splash/sptouch-icon-iphone.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/static/img/splash/touch-icon-ipad.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/static/img/splash/touch-icon-iphone-retina.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/static/img/splash/touch-icon-ipad-retina.png">
+
+		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!-- Startup image for web apps -->
+		<link rel="apple-touch-startup-image" href="/static/img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="/static/img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="/static/img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+	</head>
+
+	<body class="">
+<!-- HEADER -->
+<!--Main Navigation-->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-aqua-gradient scrolling-navbar">
+        <a class="navbar-brand" href="#">
+					<img src="/assets/img/shark.png" width="30" height="30"> {{=it.portalConfig.website.siteTitle}}
+				</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item {{? it.selected === 'index' }}active{{?}}">
+                    <a class="nav-link" href="/"><i class="fa fa-home fa-lg"></i> <span class="sr-only">(current)</span></a>
+                </li>
+								<li class="nav-item {{? it.selected === 'getting_started' }}active{{?}}">
+                    <a class="nav-link" href="/getting_started">Getting started</a>
+                </li>
+                <li class="nav-item {{? it.selected === 'workers' }}active{{?}}">
+                    <a class="nav-link" href="/workers">Workers</a>
+                </li>
+                <li class="nav-item {{? it.selected === 'stats' }}active{{?}}">
+                    <a class="nav-link" href="/stats">Stats</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-facebook"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<!--Main Navigation-->
+<!-- END HEADER -->
+
+<!-- MAIN CONTENT -->
+<section id="pageContent">
+	{{=it.page}}
+</section>
+<!-- END MAIN CONTENT -->
+
+
+
+		<!-- Left panel : Navigation area -->
+		<!-- Note: This width of the aside area can be adjusted through LESS variables
+		<aside id="left-panel">
+			<nav>
+				<ul>
+          <li class="{{? it.selected === 'index' }}active{{?}}">
+          	<a href="/"><i class="fa fa-home"></i> <span class="menu-item-parent">Home</span></a>
+          </li>
+					<li class="{{? it.selected === 'getting_started' }}active{{?}}">
+						<a href="/getting_started"><i class="fa fa-rocket"></i> <span class="menu-item-parent">Getting Started</span></a>
+					</li>
+					<li class="{{? it.selected === 'stats' }}active{{?}}">
+						<a href="/stats"><i class="fa fa-bar-chart-o"></i> <span class="menu-item-parent">Statistics</span></a>
+					</li>
+					<li class="{{? it.selected === 'workers' }}active{{?}}">
+						<a href="/workers"><i class="fa fa-cogs"></i> <span class="menu-item-parent">Workers</span></a>4
+					</li>
+					<li class="{{? it.selected === 'api' }}active{{?}}">
+						<a href="/api"><i class="fa fa-code"></i> <span class="menu-item-parent">API</span></a>
+					</li>
+				</ul>
+			</nav>
+			<span class="minifyme" data-action="minifyMenu">
+				<i class="fa fa-arrow-circle-left hit"></i>
+				<i class="cc BTC"></i>
+			</span>
+
+		</aside>
+		END NAVIGATION -->
+
+		<!-- MAIN PANEL
+		<div id="main" role="main">
+
+			<div id="ribbon">
+				<ol class="breadcrumb">
+					<li>UNOMP BETA</li><li>{{=it.selected}}</li>
+				</ol>
+			</div>
+			END RIBBON
+
+		</div> -->
+		<!-- END MAIN PANEL -->
+
+		<!-- PAGE FOOTER
+		<div class="page-footer">
+			<div class="row">
+    				<div>
+        			  <span class="txt-color-white"><i class="fa fa-heart"></i>&nbsp; Support this project by donating&nbsp;<i class="fa fa-btc icon-x2"></i>&nbsp; 19svwpxWAhD4zsfeEnnxExZgnQ46A3mrt3</span>
+    				</div>
+				<div class="col-xs-12 col-sm-6">
+                                  <span class="txt-color-white"><i class="fa fa-github"></i>&nbsp; Find me at&nbsp;<a href="https://github.com/UNOMP/unified-node-open-mining-portal" target="_blank">Unified Node Open Mining Portal</a></span>
+				</div>
+			</div>
+		</div>
+		END PAGE FOOTER -->
+
+		<!--[if IE 8]>
+
+		<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+		<![endif]-->
+
+		<!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="/assets/js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="/assets/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="/assets/js/mdb.min.js"></script>
+		<!-- Custom JS -->
+		<script type="text/javascript" src="/assets/js/script.js"></script>
+	</body>
+
+</html>
